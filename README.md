@@ -1,4 +1,5 @@
-# Git_Course
-Felopateer's Git Course
+# My First Template
+
+Felopateer's First Template
 
 ## Project notes
