@@ -6,6 +6,7 @@
     --section-padding: 60px;
     --section-background: #f6f6f6;
     --transition-duration: 0.3s;
+    --section-margin: 120px;
 }
 
 
@@ -34,6 +35,12 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 
@@ -192,12 +199,6 @@ body {
     background-color: var(--section-background);
 }
 
-.features .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
 .features .feat {
     padding: 20px;
     text-align: center;
@@ -232,10 +233,7 @@ body {
 }
 
 .services .container .services-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 120px;
+    margin-top: var(--section-margin);
 }
 
 .services .container .services-content .col .serv {
@@ -293,10 +291,7 @@ body {
 }
 
 .portfolio .portfolio-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 120px;
+    margin-top: var(--section-margin);
 }
 
 .portfolio .portfolio-content .card {
@@ -330,7 +325,7 @@ body {
 }
 
 .about .about-content {
-    margin-top: 120px;
+    margin-top: var(--section-margin);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
