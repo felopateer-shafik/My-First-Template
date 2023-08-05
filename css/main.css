@@ -2,7 +2,7 @@
 
 :root {
     --main-color: #10cab7;
-    --secondry-color: #2c4755;
+    --secondry-color: #ED5565;
     --section-padding: 60px;
     --section-background: #f6f6f6;
     --transition-duration: 0.3s;
@@ -43,11 +43,15 @@ body {
     gap: 30px;
 }
 
+h3 {
+    color: #2c4755;
+}
+
 
 /* Components */
 
 .special-heading {
-    color: #ebeced;
+    color: #2c4755;
     font-size: 100px;
     text-align: center;
     font-weight: 800;
@@ -56,7 +60,7 @@ body {
 }
 
 .special-heading+p {
-    margin: -30px 0 0;
+    margin: -15px 0 0;
     font-size: 20px;
     text-align: center;
 }
@@ -70,6 +74,7 @@ body {
     z-index: 999;
     background-color: white;
     width: 100%;
+    box-shadow: 0 2px 5px -4px #2c4755;
 }
 
 .header .container {
@@ -267,7 +272,7 @@ body {
 
 .services .services-content .image::before {
     content: "";
-    background-color: var(--secondry-color);
+    background-color: #2c4755;
     position: absolute;
     width: 100px;
     height: calc(100% + 100px);
@@ -353,8 +358,8 @@ body {
     position: absolute;
     width: 100px;
     height: 220px;
-    border-left: 80px solid var(--main-color);
-    border-bottom: 65px solid var(--main-color);
+    border-left: 80px solid #2c4755;
+    border-bottom: 65px solid #2c4755;
     z-index: -1;
     right: -130px;
     top: -20px;
@@ -391,7 +396,7 @@ body {
 
 .contact {
     padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-bottom: 136px;
     background-color: var(--section-background);
 }
 
@@ -410,7 +415,6 @@ body {
 
 .contact .info .link {
     text-decoration: none;
-    display: block;
     color: var(--main-color);
     font-size: 40px;
     font-weight: 800;
@@ -423,29 +427,135 @@ body {
 
 .contact .info .social i {
     margin-left: 20px;
-    color: var(--secondry-color);
+    color: #2c4755;
 }
 
 .contact .info .social i:hover {
     cursor: pointer;
 }
 
+.contact .social .icon-link {
+    text-decoration: none;
+}
+
 
 /* Footer */
 
-.footer {
-    background-color: var(--secondry-color);
-    padding: 35px;
+body .footer {
+    z-index: 1;
+    --footer-background: #ED5565;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
 }
 
-.footer .info {
+body .footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+}
+
+body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+
+body .footer .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 2rem;
+    background: var(--footer-background);
+}
+
+body .footer .content a,
+body .footer .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+}
+
+body .footer .content b {
     color: white;
-    text-align: center;
-    font-weight: bold;
 }
 
-.footer .info span {
-    color: var(--main-color);
+body .footer .content p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+body .footer .content>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body .footer .content>div>div {
+    margin: 0.25rem 0;
+}
+
+body .footer .content>div>div>* {
+    margin-right: 0.5rem;
+}
+
+body .footer .content>div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+}
+
+@-webkit-keyframes bubble-size {
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-size {
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@-webkit-keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+    100% {
+        bottom: var(--distance, 10rem);
+    }
 }
 
 
@@ -457,10 +567,7 @@ body {
         text-align: center;
     }
     .special-heading {
-        font-size: 60px;
-    }
-    .special-heading+p {
-        margin-top: -20px;
+        font-size: 80px;
     }
     .contact .info {
         margin-top: 80px;
