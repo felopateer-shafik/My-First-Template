@@ -576,6 +576,9 @@ body .footer .content>div .image {
     .contact .info .label {
         font-size: 25px;
     }
+    .contact .info .social i {
+        margin-left: 10px
+    }
 }
 
 @media (min-width: 768px) {
