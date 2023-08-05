@@ -438,6 +438,10 @@ h3 {
     text-decoration: none;
 }
 
+.contact .social p {
+    display: inline-block;
+}
+
 
 /* Footer */
 
@@ -578,6 +582,9 @@ body .footer .content>div .image {
     }
     .contact .info .social i {
         margin-left: 10px
+    }
+    .contact .social p {
+        font-size: 12px;
     }
 }
 
