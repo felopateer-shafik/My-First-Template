@@ -226,7 +226,7 @@ h3 {
 }
 
 .features .feat:hover {
-    box-shadow: 0 0 3px 0px #a8a8a8;
+    box-shadow: 0 0 6px -2px #2c4755;
 }
 
 
@@ -299,8 +299,24 @@ h3 {
     margin-top: var(--section-margin);
 }
 
+.portfolio .portfolio-content a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.portfolio .portfolio-content a:hover {
+    box-shadow: 0 0 16px -2px #2c4755;
+    transform: scale(1.00);
+}
+
 .portfolio .portfolio-content .card {
     background-color: white;
+    transition: 0.5s;
+}
+
+.portfolio .portfolio-content .card:hover {
+    box-shadow: 0 0 16px -2px #2c4755;
+    transform: scale(1.09);
 }
 
 .portfolio .portfolio-content img {
@@ -477,9 +493,27 @@ body .footer .bubbles .bubble {
 body .footer .content {
     z-index: 2;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
     padding: 2rem;
     background: var(--footer-background);
+}
+
+body .footer .content>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+body .footer .content>div>div {
+    margin: 0.25rem 0;
+}
+
+body .footer .content>div:last-of-type {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg);
+    width: 128px;
 }
 
 body .footer .content a,
@@ -586,13 +620,21 @@ body .footer .content>div .image {
     .contact .social p {
         font-size: 12px;
     }
+    .portfolio .portfolio-content a .card:first-of-type img {
+        height: 229.8px;
+    }
+    .portfolio .portfolio-content a:hover,
+    .portfolio .portfolio-content .card:hover {
+        box-shadow: none;
+        transform: none;
+    }
 }
 
 @media (min-width: 768px) {
     .container {
         width: 750px;
     }
-    .portfolio .portfolio-content .card:first-of-type img {
+    .portfolio .portfolio-content a .card:first-of-type img {
         height: 229.58px;
     }
 }
@@ -615,7 +657,7 @@ body .footer .content>div .image {
     .container {
         width: 970px;
     }
-    .portfolio .portfolio-content .card:first-of-type img {
+    .portfolio .portfolio-content a .card:first-of-type img {
         height: 302.79px;
     }
 }
@@ -630,7 +672,7 @@ body .footer .content>div .image {
     .container {
         width: 1170px;
     }
-    .portfolio .portfolio-content .card:first-of-type img {
+    .portfolio .portfolio-content a .card:first-of-type img {
         height: 239.57px;
     }
 }
